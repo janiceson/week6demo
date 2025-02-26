@@ -5,37 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>1 INPUT 1 OUTPUT TEMPLATE</title>
     <style>
+        body{
+            background-color: rgb(252, 236, 211);
+            align-items: center;
+        }
+        h1 {
+            font-style: italic;
+            margin-top: 10vh;
+            text-align: center;
+            font-size: 4vw;
+
+        }
 
         /* STYLE FOR THE INPUT FIELD */
         #charInput {
-            color: rgb(0, 77, 77);
-            background-color: aqua;
-
+            color: rgb(0, 0, 0);
+            background-color: rgb(255, 242, 213);
+            margin-left: 39vw;
+            font-family: 'Times New Roman', Times, serif;
+            margin-top: -7vh;
+            padding: 0.5vw;
+            font-size: 1.2vw;
+            align-content: center;
 
         }
 
         /* STYLE FOR THE SUBMIT BUTTON */
         #submitButton {
-            background-color: aqua;
+            background-color: rgb(255, 242, 213);
+            font-family: 'Times New Roman', Times, serif;
+            position: relative;
+            padding: 0.5vw;
+            font-size: 1.2vw;
 
         }
 
         /* STYLE FOR THE IMAGE */
         #displayedImage {
             display: none; /* This line is mandatory */
-            height: 30vh;
-            width: auto;
+            height: auto;
+            width: 50vw;
+            margin-left: 25vw;
+            margin-top: 6vh;
         }
     </style>
 </head>
 <body>
 
-    
+    <h1>type in a letter for a drawing</h1> 
     <!-- INPUT FIELD FOR 1 CHARACTER -->
     <input type="text" id="charInput" maxlength="1">
 
     <!-- BUTTON TO DISPLAY IMAGE -->
     <button onclick="displayImage()" id="submitButton">Show Image</button>
+    
 
     <!-- IMAGE TO DISPLAY -->
     <img id="displayedImage" src="" alt="Displayed Image">
@@ -88,10 +111,10 @@
                 alert("Please enter a letter between A and Z.");
                 imgElement.style.display = "none";
                 */
+               alert ("LETTERS ONLY! TRY AGAIN! LETTERS ONLY! TRY AGAIN! LETTERS ONLY! TRY AGAIN! LETTERS ONLY! TRY AGAIN! LETTERS ONLY! TRY AGAIN! LETTERS ONLY! TRY AGAIN!")
 
                 // IF INVALID INPUT IS ENTERED, DISPLAY ALTERNATE IMAGE
-                imgElement.src = "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExcmtkdnJhMXY4Njd1cXR3MTM3MW1nMzZ1NXNhNHlhOHA0MWF2dDUzdyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/13dRJkj5wgKq9q/giphy.gif"
-                imgElement.style.display = "block";
+                
             }
         }
     </script>
