@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1 INPUT 1 OUTPUT TEMPLATE</title>
+    <style>
+
+        /* STYLE FOR THE INPUT FIELD */
+        #charInput {
+            color: rgb(0, 77, 77);
+            background-color: aqua;
+
+
+        }
+
+        /* STYLE FOR THE SUBMIT BUTTON */
+        #submitButton {
+            background-color: aqua;
+
+        }
+
+        /* STYLE FOR THE IMAGE */
+        #displayedImage {
+            display: none; /* This line is mandatory */
+            height: 30vh;
+            width: auto;
+        }
+    </style>
+</head>
+<body>
+
+    
+    <!-- INPUT FIELD FOR 1 CHARACTER -->
+    <input type="text" id="charInput" maxlength="1">
+
+    <!-- BUTTON TO DISPLAY IMAGE -->
+    <button onclick="displayImage()" id="submitButton">Show Image</button>
+
+    <!-- IMAGE TO DISPLAY -->
+    <img id="displayedImage" src="" alt="Displayed Image">
+
+
+    <!-- Image Display Script Below -->
+    <script>
+        // Array of images
+        // DIRECTIONS: UPDATE THE URLS WITH THE RELATIVE LINKS OF YOUR IMAGES
+        const images = [
+            "imgs/img1.jpg?text=A", //A
+            "imgs/img2.jpg?text=B", //B
+            "imgs/img3.jpg?text=C", //C
+            "imgs/img4.jpg?text=D", //D
+            "imgs/img5.jpg?text=E", //E
+            "imgs/img6.jpg?text=F", //F
+            "imgs/img7.jpg?text=G", //G
+            "imgs/img8.jpg?text=H", //H
+            "imgs/img9.jpg?text=I", //I
+            "imgs/img10.jpg?text=J", //J
+            "imgs/img11.jpg?text=K", //K
+            "imgs/img12.jpg?text=L", //L
+            "imgs/img13.jpg?text=M", //M
+            "imgs/img14.jpg?text=N", //N
+            "imgs/img15.jpg?text=O", //O
+            "imgs/img16.jpg?text=P", //P
+            "imgs/img17.jpg?text=Q", //Q
+            "imgs/img18.jpg?text=R", //R
+            "imgs/img19.jpg?text=S", //S
+            "imgs/img20.jpg?text=T", //T
+            "imgs/img21.jpg?text=U", //U
+            "imgs/img22.jpg?text=V", //V
+            "imgs/img23.jpg?text=W", //W
+            "imgs/img24.jpg?text=X", //X
+            "imgs/img25.jpg?text=Y", //Y
+            "imgs/img26.jpg?text=Z"  //Z
+        ];
+
+        function displayImage() {
+            const input = document.getElementById("charInput").value.toUpperCase();
+            const imgElement = document.getElementById("displayedImage");
+            
+            // Assign an image based on character (A-Z)
+            const index = input.charCodeAt(0) - 65; // 'A' is 65 in ASCII
+            if (index >= 0 && index < images.length) {
+                imgElement.src = images[index];
+                imgElement.style.display = "block";
+            } else {
+                /* 
+                alert("Please enter a letter between A and Z.");
+                imgElement.style.display = "none";
+                */
+
+                // IF INVALID INPUT IS ENTERED, DISPLAY ALTERNATE IMAGE
+                imgElement.src = "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExcmtkdnJhMXY4Njd1cXR3MTM3MW1nMzZ1NXNhNHlhOHA0MWF2dDUzdyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/13dRJkj5wgKq9q/giphy.gif"
+                imgElement.style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+</html>
